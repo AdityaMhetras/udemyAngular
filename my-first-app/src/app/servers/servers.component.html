@@ -1,2 +1,24 @@
-<app-server></app-server>
-<app-server></app-server>
+<label>Server name</label>
+<!-- <input
+type="text"
+class="form-control"
+(input)="onUpdateServerName($event)"> event binding -->
+<input
+type="text"
+class="form-control"
+[(ngModel)]="servername" two way binding>
+<!-- <p>{{ servername }}</p> String Interpolation-->
+<button class="btn btn-primary" 
+[disabled]="!allowNewServer" propertybinding
+(click)="onCreateServer()">Add server</button>
+
+<!-- <p [innerText]=serverCreationStatus></p> -->
+<p *ngIf="serverCreated; else noServer">Server was created, name is {{ servername}}</p>
+<ng-template #noServer>
+    <p>no server was created</p> 
+</ng-template>
+
+<app-server *ngFor="let server of servers"></app-server>
+
+<hr>
+

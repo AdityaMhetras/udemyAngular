@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sx-12">
+            <ol>
+                <li>Add a button which says display details</li>
+                <button name="displayDetails"
+                (click)="toggleShowParagraph()">display details</button>
+                <li>Add a para of ur choice</li>
+                <p *ngIf="getShowParagraph() === true"> Secret pw = tuna</p>
+                <li>toggle display of para</li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+</div>
